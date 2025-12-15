@@ -1,0 +1,112 @@
+---
+title: Getting Started with Janek Unon
+description: Quickly set up your first documentation space and start creating content in minutes.
+---
+
+## Overview
+
+Janek Unon helps you build and manage documentation spaces for your projects. You create organized docs sites with MDX support, custom themes, and easy publishing. Follow these steps to set up your first space and add content.
+
+<Callout kind="tip">
+  Use your brand color `#3B82F6` in themes for a custom look.
+</Callout>
+
+## Create a New Documentation Space
+
+Set up your space in three steps.
+
+<Steps>
+  <Step title="Sign Up or Log In" icon="user">
+    Visit the Janek Unon dashboard at `https://app.janekunon.com` and create an account with your email or GitHub.
+  </Step>
+
+  <Step title="Create Space" icon="plus">
+    Click **New Space**, enter a name like "My Project Docs", and select your brand color `#3B82F6`.
+  </Step>
+
+  <Step title="Configure Basics" icon="settings">
+    Choose a template (blank or starter), set the domain, and save. Your space appears in the sidebar.
+  </Step>
+</Steps>
+
+## Navigate the Interface
+
+The dashboard organizes everything into clear sections.
+
+<Columns cols={3}>
+  <Card title="Spaces" icon="layout" href="/docs/spaces">
+    Manage multiple documentation spaces.
+  </Card>
+
+  <Card title="Pages" icon="file-text" href="/docs/pages">
+    Edit, organize, and preview pages.
+  </Card>
+
+  <Card title="Themes" icon="palette" href="/docs/themes">
+    Customize colors and layouts.
+  </Card>
+</Columns>
+
+## Add Your First Page
+
+Create pages via the UI or import from Markdown/MDX.
+
+<Tabs>
+  <Tab title="UI Editor" icon="edit-3">
+    In your space, click **New Page**. Set the slug to `quickstart`, add frontmatter, and start editing.
+  </Tab>
+
+  <Tab title="Upload MDX" icon="upload">
+    Drag and drop your `quickstart.mdx` file into the pages list. It auto-processes.
+  </Tab>
+</Tabs>
+
+## Basic Editing and Publishing
+
+Edit with MDX syntax. Use components like `<Callout>` for notes.
+
+<CodeGroup tabs="Frontmatter,Content">
+  ```yaml
+  ---
+  title: My Page
+  description: Page summary.
+  ---
+  ```
+  ```mdx
+  ## Overview
+
+  Write your content here.
+
+  <Callout kind="info">
+    This is a note.
+  </Callout>
+  ```
+</CodeGroup>
+
+Preview changes live. Click **Publish** to deploy. Updates go live in `<1s`.
+
+<Callout kind="success">
+  Your site is now accessible at `https://your-space.janekunon.com`.
+</Callout>
+
+<Expandable title="Advanced Publishing Options" default-open="false">
+  Use CLI for automation:
+
+  ```bash
+  npx janek-unon publish --space my-project --token YOUR_TOKEN
+  ```
+
+  Set `YOUR_TOKEN` in your account settings.
+</Expandable>
+
+## Next Steps
+
+<Columns cols={2}>
+  <Card title="Customize Themes" icon="brush" href="/docs/themes">
+    Apply `#3B82F6` and add logos.
+  </Card>
+
+  <Card title="Add API Docs" icon="code" href="/docs/api">
+    Use `<ParamField>` for endpoints.
+  </Card>
+</Columns>

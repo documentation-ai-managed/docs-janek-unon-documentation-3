@@ -1,0 +1,116 @@
+---
+title: Organizing and Managing Your Documentation
+description: Learn how to structure, categorize, and maintain your project documentation effectively.
+---
+
+## Overview
+
+Organize your Janek Unon documentation to make it easy to find and maintain. Use folders for hierarchy, version control for changes, search tools for discovery, and permissions for collaboration. Follow these practices to keep your docs scalable and user-friendly.
+
+<Columns cols={3}>
+  <Card title="Folder Structure" icon="folder" href="#">
+    Create nested folders for clear organization.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="#">
+    Track changes with Git integration.
+  </Card>
+  <Card title="Team Collaboration" icon="users" href="#">
+    Manage access and reviews.
+  </Card>
+</Columns>
+
+## Creating Folders and Pages
+
+Build a logical structure starting with top-level folders like `guides/`, `api/`, and `reference/`. Nest subfolders for deeper categorization, such as `guides/quickstart/` and `api/endpoints/`.
+
+<Steps>
+  <Step title="Create a Folder" icon="folder-plus">
+    In the sidebar, click the `+` icon next to your workspace. Select `New Folder` and name it `api-reference`.
+  </Step>
+  <Step title="Add a Page" icon="file-plus">
+    Inside the folder, click `New Page`. Use the title `Authentication` and MDX content.
+  </Step>
+  <Step title="Reorder Content" icon="move">
+    Drag folders or pages in the sidebar to adjust hierarchy.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Limit folder depth to three levels to avoid navigation complexity.
+</Callout>
+
+## Version Control for Docs
+
+Integrate Git to track changes, collaborate, and roll back edits. Connect your repo to Janek Unon for seamless pushes.
+
+<Tabs>
+  <Tab title="GitHub" icon="github">
+    Link your repo via Settings > Integrations. Push changes with:
+
+    ````bash
+    git add docs/
+    git commit -m "Update authentication guide"
+    git push origin main
+    ````
+
+    Janek Unon auto-syncs on push.
+  </Tab>
+  <Tab title="GitLab" icon="git-commit">
+    Use the GitLab webhook in Integrations. Example workflow:
+
+    ````bash
+    git checkout -b feature/new-guide
+    git add .
+    git commit -m "Add search tools section"
+    git push origin feature/new-guide
+    ````
+  </Tab>
+</Tabs>
+
+<CodeGroup tabs="Bash,CLI">
+  ```bash
+  # Clone and setup
+  git clone https://github.com/your-org/janek-docs.git
+  cd janek-docs
+  npm install  # If using MDX tools
+  ```
+  ```bash
+  # Common commands
+  git status
+  git diff docs/organizing.mdx
+  git log --oneline -5 docs/
+  ```
+</CodeGroup>
+
+## Search and Navigation Tools
+
+Enhance discoverability with built-in search and sidebar navigation. Tag pages with `["guide", "api"]` in frontmatter for filtered results.
+
+| Feature | Description | Usage |
+|---------|-------------|-------|
+| Global Search | Fuzzy search across all pages | Press `Ctrl+K` or `/` |
+| Breadcrumbs | Shows hierarchy path | Auto-displays in page header |
+| Tags | Categorize for quick filters | Add `tags: ["feature"]` to frontmatter |
+
+## Collaboration and Permissions
+
+Invite team members and set granular access. Use roles to control edits and views.
+
+<ExpandableGroup>
+  <Expandable title="Role Permissions" default-open="true">
+    | Role | View | Edit | Admin |
+    |------|------|------|-------|
+    | Viewer | ✅ | ❌ | ❌ |
+    | Editor | ✅ | ✅ | ❌ |
+    | Admin | ✅ | ✅ | ✅ |
+  </Expandable>
+  <Expandable title="Invite Workflow">
+    Go to Workspace Settings > Members. Enter email and select role. They receive an invite link.
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="info">
+  Review pending changes in the `Drafts` tab before publishing.
+</Callout>
+
+Maintain your documentation by reviewing structure quarterly and pruning outdated pages. This keeps your Janek Unon space efficient and collaborative.

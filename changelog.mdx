@@ -1,0 +1,149 @@
+---
+title: Changelog
+description: Track updates and improvements to Janek Unon with release notes and version history.
+---
+
+## Changelog Overview
+
+Welcome to the Janek Unon changelog. You find detailed release notes for each version here, including new features, improvements, bug fixes, and breaking changes. Check this page regularly to stay informed about updates that enhance your documentation management experience.
+
+<Callout kind="info">
+  You receive notifications for major releases via the dashboard. Enable email alerts in your account settings to never miss an update.
+</Callout>
+
+## v1.0.0 - Stable Release
+
+<Update label="2024-10-15" description="v1.0.0" tags={["feature", "breaking"]}>
+## New Features
+
+- Added real-time collaboration on documentation pages for teams
+- Introduced version history with diff viewer for tracking changes
+- New search indexing for instant full-text search across all docs
+
+## Improvements
+
+- Enhanced performance with lazy loading for large documentation sites
+- Updated UI components to use the latest design system
+
+## Breaking Changes
+
+- Removed legacy `getDocBySlug` API endpoint; migrate to `fetchDoc`
+- Configuration format changed from YAML to JSON
+
+## Bug Fixes
+
+- Fixed rendering issues with nested lists in Markdown editor
+- Resolved sync errors during offline mode reconnection
+</Update>
+
+## v0.9.0 - Collaboration Beta
+
+<Update label="2024-09-20" description="v0.9.0" tags={["feature", "improvement"]}>
+## New Features
+
+- Beta support for multi-user editing with live cursors
+- Integrated GitHub sync for version control workflows
+- Custom themes with CSS variables for branding
+
+## Improvements
+
+- Faster page loads by optimizing asset bundling
+- Better mobile responsiveness for documentation previews
+
+## Bug Fixes
+
+- Corrected export failures for pages with embedded images
+- Fixed keyboard shortcuts conflicting with browser defaults
+</Update>
+
+## v0.8.0 - Performance Release
+
+<Update label="2024-08-10" description="v0.8.0" tags={["bugfix", "improvement"]}>
+## Improvements
+
+- Optimized database queries reducing load times by 40%
+- Added caching layer for frequently accessed docs
+
+## Bug Fixes
+
+- Patched security vulnerability in file upload handling
+- Fixed crash when parsing malformed Markdown tables
+</Update>
+
+## Upgrading to the Latest Version
+
+Follow these steps to upgrade Janek Unon smoothly. You back up your data first to avoid disruptions.
+
+<Steps>
+  <Step title="Backup Your Data" icon="database">
+    Export your documentation site:
+
+    ```bash
+    npx janek-unon export --site my-docs --output ./backup
+    ```
+
+    Verify the backup integrity before proceeding.
+  </Step>
+
+  <Step title="Update Package" icon="package">
+    Install the latest version using your preferred package manager.
+
+    <CodeGroup tabs="npm,yarn,pnpm">
+    ```bash
+    npm install janek-unon@latest
+    ```
+    ```bash
+    yarn add janek-unon@latest
+    ```
+    ```bash
+    pnpm add janek-unon@latest
+    ```
+    </CodeGroup>
+  </Step>
+
+  <Step title="Run Migrations" icon="settings">
+    Apply database migrations:
+
+    ```bash
+    npx janek-unon migrate
+    ```
+
+    Review the changelog for any manual steps, such as updating config files from YAML to JSON.
+  </Step>
+
+  <Step title="Restart Service" icon="refresh-cw">
+    Restart your Janek Unon instance and test core features like editing and search.
+  </Step>
+</Steps>
+
+<Callout kind="tip" default-open="true">
+  After upgrading from v0.9 or earlier, update your API calls. Replace `getDocBySlug({slug})` with `fetchDoc({path: slug})`.
+</Callout>
+
+## Upcoming Roadmap
+
+Explore what's next for Janek Unon. You provide feedback on these features via the community forum.
+
+<Columns cols={3}>
+  <Card title="AI Assistance" icon="zap" href="/docs/ai-features">
+    Coming in v1.1: Auto-generate summaries and suggest content structure using AI.
+  </Card>
+
+  <Card title="Advanced Analytics" icon="bar-chart-3" href="/docs/analytics">
+    Track reader engagement and popular pages in v1.2.
+  </Card>
+
+  <Card title="Enterprise SSO" icon="shield" href="/docs/security">
+    SAML and OAuth support for teams in v1.3.
+  </Card>
+</Columns>
+
+<Expandable title="Detailed Roadmap Timeline" default-open="false">
+| Quarter | Key Milestones |
+|---------|----------------|
+| Q4 2024 | v1.1 AI features, improved search |
+| Q1 2025 | v1.2 Analytics dashboard |
+| Q2 2025 | v1.3 Enterprise security |
+
+Share your priorities to influence the roadmap.
+</Expandable>
