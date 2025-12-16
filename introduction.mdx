@@ -1,28 +1,31 @@
 ---
 title: Welcome to Janek Unon Documentation
-description: An overview of Janek Unon, your default documentation space for organizing and managing project documentation with ease.
+description: >-
+  An overview of Janek Unon, your default documentation space for organizing and
+  managing project documentation with ease.
 ---
-
 ## What is Janek Unon?
 
 Janek Unon provides you with a centralized space to create, organize, and publish your project's documentation. You get powerful MDX editing, version control integration, and customizable themes to build professional docs sites. Start by connecting your repository, and Janek Unon handles hosting, search, and navigation automatically.
 
-<Callout kind="info">
-Janek Unon supports MDX v3 and integrates seamlessly with GitHub for real-time previews.
+<Callout kind="info" collapsed="false">
+  Janek Unon supports MDX v3 and integrates seamlessly with GitHub for real-time previews.
 </Callout>
 
 ## Key Benefits and Features
 
 Discover how Janek Unon simplifies your documentation workflow.
 
-<Columns cols={3}>
-  <Card title="Easy Editing" icon="edit-3" href="#">
+<Columns cols="3">
+  <Card title="Easy Editing" href="#" icon="edit-3" horizontal="false">
     Write in Markdown or MDX with live previews. Embed components like `<Callout>` and `<Steps>` directly.
   </Card>
-  <Card title="Custom Themes" icon="palette" href="#">
+
+  <Card title="Custom Themes" href="#" icon="palette" horizontal="false">
     Apply your brand color `#3B82F6` and custom layouts without coding.
   </Card>
-  <Card title="Search & Navigation" icon="search" href="#">
+
+  <Card title="Search & Navigation" href="#" icon="search" horizontal="false">
     Built-in full-text search and automatic sidebar generation from your files.
   </Card>
 </Columns>
@@ -32,10 +35,11 @@ Discover how Janek Unon simplifies your documentation workflow.
 Follow these steps to set up your first documentation site.
 
 <Steps>
-  <Step title="Connect Repository" icon="git-branch">
+  <Step title="Connect Repository" icon="git-branch" title-type="p">
     Link your GitHub repo in the dashboard. Janek Unon pulls your `docs/` folder automatically.
   </Step>
-  <Step title="Customize Config" icon="settings">
+
+  <Step title="Customize Config" icon="settings" title-type="p">
     Edit `janek.config.js` to set your brand color and navigation.
 
     ```javascript
@@ -51,8 +55,13 @@ Follow these steps to set up your first documentation site.
     };
     ```
   </Step>
-  <Step title="Publish" icon="globe">
+
+  <Step title="Publish" icon="globe" title-type="p">
     Push changes to trigger a build. Your site deploys at `your-project.janek.app`.
+  </Step>
+
+  <Step title="New Step" title-type="p">
+    Description for this step...
   </Step>
 </Steps>
 
@@ -64,11 +73,13 @@ Access help tailored to your needs.
   <Tab title="Documentation" icon="book-open">
     Explore guides on MDX components, SEO optimization, and analytics integration.
   </Tab>
+
   <Tab title="Community" icon="users">
     Join our Discord for tips and feature requests. Share your site: `https://discord.janek.app`.
   </Tab>
+
   <Tab title="Enterprise Support" icon="shield">
-    Contact sales@janek.app for dedicated support, SSO, and custom domains.
+    Contact [sales@janek.app](mailto:sales@janek.app) for dedicated support, SSO, and custom domains.
   </Tab>
 </Tabs>
 
@@ -79,7 +90,7 @@ Follow these guidelines to align your docs with Janek Unon's branding.
 <Expandable title="Advanced Customization Examples" default-open="false">
   Override default styles in your config.
 
-  <CodeGroup tabs="CSS, Tailwind">
+  <CodeGroup show-lines="true" tabs={[]}>
     ```css
     /* styles/global.css */
     :root {
@@ -89,6 +100,7 @@ Follow these guidelines to align your docs with Janek Unon's branding.
       color: var(--primary);
     }
     ```
+
     ```javascript
     // tailwind.config.js
     module.exports = {
@@ -105,3 +117,16 @@ Follow these guidelines to align your docs with Janek Unon's branding.
 </Expandable>
 
 You now have everything to build stunning documentation. Customize freely while maintaining consistency with the `#3B82F6` brand color for buttons and accents.
+
+<Callout kind="info" collapsed="false">
+  ```javascript
+  const x = 10
+  ```
+</Callout>
+
+```typescript
+const x = 10
+```
+
+
+
